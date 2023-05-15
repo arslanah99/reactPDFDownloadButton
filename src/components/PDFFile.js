@@ -1,6 +1,13 @@
 import React from "react";
 import { Page, Text, Image, Document, StyleSheet } from "@react-pdf/renderer";
 import LebronStretch from "../photos/lebron_transparent.png";
+import { Font } from '@react-pdf/renderer';
+import MyCustomFont from '../fonts/Anton-Regular.ttf'
+
+Font.register({
+  family: 'MyFont', 
+  src: MyCustomFont,
+});
 
 const styles = StyleSheet.create({
   body: {
@@ -11,13 +18,14 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     textAlign: "center",
+    fontFamily: "MyFont",
   },
   text: {
     margin: 12,
     fontSize: 14,
     textAlign: "justify",
-    fontFamily: "Times-Roman",
-  },
+    fontFamily: "MyFont",
+    },
   image: {
     marginVertical: 15,
     marginHorizontal: 100,
@@ -27,6 +35,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     textAlign: "center",
     color: "grey",
+    fontFamily: "MyFont",
   },
   pageNumber: {
     position: "absolute",
